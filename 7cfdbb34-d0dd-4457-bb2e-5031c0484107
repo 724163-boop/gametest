@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>FPS Game - Revolver</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Babylon.js -->
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+
+  <style>
+    html, body, #renderCanvas {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #000;
+    }
+    #renderCanvas {
+      cursor: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="renderCanvas"></canvas>
+
+  <!-- ★ 自作スクリプト（通常のscriptタグで読み込み） ★ -->
+  <script src="script.js"></script>
+
+  <!-- ★ エンジン初期化＆シーン作成 ★ -->
+  <script>
+    const canvas = document.getElementById('renderCanvas');
+    const engine = new BABYLON.Engine(canvas, true);
+
+    // createScene は script.js で定義されている
+    const scene = createScene(engine);
+
+    engine.runRenderLoop(() => scene.render());
+    window.addEventListener('resize', () => engine.resize());
+  </script>
+</body>
+</html>
