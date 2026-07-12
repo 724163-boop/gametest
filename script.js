@@ -312,7 +312,7 @@ function createScene(engine) {
                 return;
             }
             gunModel.parent = camera;
-            gunModel.position = new BABYLON.Vector3(0.4, -0.3, 1.5);
+            gunModel.position = new BABYLON.Vector3(0.5, -0.4, 1);
             gunModel.rotation = new BABYLON.Vector3(-0.05, 0.05, 0);
             gunModel.scaling = new BABYLON.Vector3(0.5, 0.5, 0.5);
 
